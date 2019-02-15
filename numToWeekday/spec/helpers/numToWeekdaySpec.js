@@ -12,4 +12,10 @@ describe('Translate a number into a day of the week',()=>{
             numToWeekday(8);
         }).toThrow(new Error("Input must be between 1 and 7"));
     })
+
+    it('should throw error if input <= 0',()=>{
+        expect(()=>{
+            numToWeekday(0);
+        }).toThrow(new Error("Input must be between 1 and 7"));
+    })
 });

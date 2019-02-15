@@ -5,8 +5,9 @@ function numToWeekday(num){
 
     if(num > 7){
         throw Error("Input must be between 1 and 7");
-    }
-    else{
+    } else if(num <= 0){
+        throw Error("Input must be between 1 and 7");
+    } else{
         return num;
     }
 }
