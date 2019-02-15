@@ -1,3 +1,7 @@
 const checkFizzbuzz = (input) => {
-    return input.toString();
+    if(input % 3 == 0){
+        return 'fizz';
+    } else {
+        return input.toString();
+    }
 };
