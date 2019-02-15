@@ -13,3 +13,7 @@ it('should return "fizz" for 3',()=>{
 it('should return "buzz" for 5',()=>{
     expect(checkFizzbuzz(5)).toEqual('buzz');
 });
+
+it('should return "fizzbuzz" for 15',()=>{
+    expect(checkFizzbuzz(15)).toEqual('fizzbuzz');
+});
