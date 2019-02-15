@@ -17,3 +17,9 @@ it('should return "buzz" for 5',()=>{
 it('should return "fizzbuzz" for 15',()=>{
     expect(checkFizzbuzz(15)).toEqual('fizzbuzz');
 });
+
+it('input should be a number', ()=>{
+    expect(()=>{
+        checkFizzbuzz('bananas');
+    }).toThrow(new Error("Input must be a number"));
+});

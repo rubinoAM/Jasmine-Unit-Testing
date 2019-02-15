@@ -1,4 +1,9 @@
 const checkFizzbuzz = (input) => {
+    if(typeof(input) !== 'number'){
+        console.log('test');
+        throw Error('Input must be a number');
+    }
+
     if(input%3===0 && input%5===0){
         return 'fizzbuzz';
     } else if(input % 3 == 0){
