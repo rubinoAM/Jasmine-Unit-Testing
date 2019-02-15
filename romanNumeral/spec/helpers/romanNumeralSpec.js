@@ -18,4 +18,16 @@ describe('Convert an Arabic numeral into a Roman numeral',()=>{
     it('should return "I" if input == 1',()=>{
         expect(romanNumeral(1)).toEqual("I");
     });
+
+    it('should return "IV" if input == 4',()=>{
+        expect(romanNumeral(4)).toEqual("IV");
+    });
+
+    it('should return "V" if input == 5',()=>{
+        expect(romanNumeral(5)).toEqual("V");
+    });
+
+    it('should return "IX" if input == 9',()=>{
+        expect(romanNumeral(9)).toEqual("IX");
+    });
 })

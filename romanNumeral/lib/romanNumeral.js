@@ -14,6 +14,15 @@ function romanNumeral(num){
     if(num < 4){
         romanNum = charArray[0].repeat(num);
         return romanNum;
+    } else if (num == 4){
+        romanNum = charArray[0] + charArray[1];
+        return romanNum;
+    } else if (num == 5){
+        romanNum = charArray[1];
+        return romanNum;
+    } else if (num == 9){
+        romanNum = charArray[0] + charArray[2];
+        return romanNum;
     }
     /*else {
         return num;
