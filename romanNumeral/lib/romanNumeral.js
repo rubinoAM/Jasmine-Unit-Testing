@@ -27,9 +27,14 @@ function romanNumeral(num){
     if(num >= 1 && num <= 9){
         dummyNum = num;
         while(dummyNum > 0){
-            if(dummyNum < 9 && dummyNum >= 5){
-                dummyNum -= 5;
-                romanNum += charArray[0] + charArray[0].repeat(dummyNum);
+            if(dummyNum == 9){
+                romanNum = charArray[0] + charArray[2];
+                dummyNum = 0;
+            } else if(dummyNum < 9 && dummyNum >= 5){
+                romanNum += charArray[1];
+                dummyNum = dummyNum - 5;
+                romanNum += charArray[0].repeat(dummyNum);
+                dummyNum = 0;
             } else if(dummyNum >= 1 && dummyNum <= 4){
                 romanNum += charArray[0].repeat(dummyNum);
                 if(romanNum.length == 4){

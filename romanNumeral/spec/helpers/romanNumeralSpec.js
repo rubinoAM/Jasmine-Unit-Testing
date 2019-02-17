@@ -19,8 +19,12 @@ describe('Convert an Arabic numeral into a Roman numeral',()=>{
         expect(romanNumeral(1)).toEqual("I");
     });
 
-    it('should return "IV if input == 4',()=>{
+    it('should return "IV" if input == 4',()=>{
         expect(romanNumeral(4)).toEqual("IV");
+    });
+
+    it('should return "VIII" if input == 8',()=>{
+        expect(romanNumeral(8)).toEqual("VIII");
     });
 
     /* it('should return "V" if input == 5',()=>{
