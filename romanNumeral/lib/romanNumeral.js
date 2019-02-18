@@ -1,17 +1,3 @@
-function countDigits(num){
-    let digitCount = 0;
-    if(num >= 1){
-        digitCount++;
-    }
-    
-    while(num/10 >= 1){
-        num = num/10;
-        digitCount++;
-    }
-
-    return digitCount;
-}
-
 function romanNumeral(num){
 
     //Roman Numeral Characters
