@@ -27,7 +27,7 @@ describe('Convert an Arabic numeral into a Roman numeral',()=>{
         expect(romanNumeral(8)).toEqual("VIII");
     });
 
-    /* it('should return "IX" if input == 9',()=>{
+    it('should return "IX" if input == 9',()=>{
         expect(romanNumeral(9)).toEqual("IX");
     });
 
@@ -39,7 +39,7 @@ describe('Convert an Arabic numeral into a Roman numeral',()=>{
         expect(romanNumeral(73)).toEqual("LXXIII");
     }); 
     
-    it('should return "CXII" if input == 112',()=>{
+    /*it('should return "CXII" if input == 112',()=>{
         expect(romanNumeral(112)).toEqual("CXII");
     }); 
     
