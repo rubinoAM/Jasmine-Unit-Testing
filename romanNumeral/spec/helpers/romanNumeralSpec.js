@@ -27,15 +27,23 @@ describe('Convert an Arabic numeral into a Roman numeral',()=>{
         expect(romanNumeral(8)).toEqual("VIII");
     });
 
-    /* it('should return "V" if input == 5',()=>{
-        expect(romanNumeral(5)).toEqual("V");
-    });
-
-    it('should return "IX" if input == 9',()=>{
+    /* it('should return "IX" if input == 9',()=>{
         expect(romanNumeral(9)).toEqual("IX");
     });
 
     it('should return "XXIII" if input == 23',()=>{
         expect(romanNumeral(23)).toEqual("XXIII");
+    }); 
+    
+    it('should return "LXXIII" if input == 73',()=>{
+        expect(romanNumeral(73)).toEqual("LXXIII");
+    }); 
+    
+    it('should return "CXII" if input == 112',()=>{
+        expect(romanNumeral(112)).toEqual("CXII");
+    }); 
+    
+    it('should return "MIX" if input == 1009',()=>{
+        expect(romanNumeral(1009)).toEqual("MIX");
     }); */
 })
