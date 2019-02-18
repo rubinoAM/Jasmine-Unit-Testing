@@ -43,7 +43,7 @@ describe('Convert an Arabic numeral into a Roman numeral',()=>{
         expect(romanNumeral(112)).toEqual("CXII");
     }); 
     
-    /* it('should return "MIX" if input == 1009',()=>{
+    it('should return "MIX" if input == 1009',()=>{
         expect(romanNumeral(1009)).toEqual("MIX");
-    }); */
+    });
 })

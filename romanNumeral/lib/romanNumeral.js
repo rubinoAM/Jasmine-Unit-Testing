@@ -59,11 +59,40 @@ function romanNumeral(num){
 
             //1000+
             if(dummyTens >= 1000){
+                //Thousands
                 dummyThousands = Math.floor(dummyTens/1000);
+                romanNum += charArray[6].repeat(dummyThousands);
+
+                //Hundreds
                 dummyHundreds = Math.floor(dummyTens/100);
-                dummyTens = Math.floor(dummyTens/10);
-                romanNum += charArray[7].repeat(dummyThousands);
-                romanNum += charArray[5].repeat(dummyHundreds);
+                if(dummyHundreds == 10){
+                    dummyHundreds = 0;
+                } else if(dummyHundreds == 9){
+                    romanNum += charArray[4] + charArray[6];
+                    dummyHundreds = 0;
+                } else if(dummyHundreds < 9 && dummyHundreds >= 5){
+                    romanNum += charArray[5];
+                    dummyHundreds -= 5;
+                } else if(dummyHundreds == 4){
+                    romanNum += charArray[4] + charArray[5];
+                    dummyHundreds = 0;
+                }
+                romanNum += charArray[4].repeat(dummyHundreds);
+
+                //Tens
+                dummyTens = Math.floor(dummyTens/100);
+                if(dummyTens == 10){
+                    dummyTens = 0;
+                } else if(dummyTens == 9){
+                    romanNum += charArray[2] + charArray[4];
+                    dummyTens = 0;
+                } else if(dummyTens < 9 && dummyTens >= 5){
+                    romanNum += charArray[3];
+                    dummyTens -= 5;
+                } else if(dummyTens == 4){
+                    romanNum += charArray[2] + charArray[3];
+                    dummyTens = 0;
+                }
                 romanNum += charArray[2].repeat(dummyTens);
             } 
             //100 - 999
@@ -111,6 +140,7 @@ function romanNumeral(num){
                 }
                 romanNum += charArray[2].repeat(dummyTens);
             }
+            //Ones
             dummyNum = dummyNum % 10;
             if(dummyNum < 10){
                 if(dummyNum == 9){
