@@ -39,11 +39,11 @@ describe('Convert an Arabic numeral into a Roman numeral',()=>{
         expect(romanNumeral(73)).toEqual("LXXIII");
     }); 
     
-    /*it('should return "CXII" if input == 112',()=>{
+    it('should return "CXII" if input == 112',()=>{
         expect(romanNumeral(112)).toEqual("CXII");
     }); 
     
-    it('should return "MIX" if input == 1009',()=>{
+    /* it('should return "MIX" if input == 1009',()=>{
         expect(romanNumeral(1009)).toEqual("MIX");
     }); */
 })

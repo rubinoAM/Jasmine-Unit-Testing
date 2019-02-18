@@ -54,7 +54,10 @@ function romanNumeral(num){
         dummyNum = num;
         let dummyTens, dummyHundreds, dummyThousands = 0;
         while(dummyNum > 0){
+            //Default Value for dummyTens
             dummyTens = dummyNum - (dummyNum % 10);
+
+            //1000+
             if(dummyTens >= 1000){
                 dummyThousands = Math.floor(dummyTens/1000);
                 dummyHundreds = Math.floor(dummyTens/100);
@@ -62,16 +65,49 @@ function romanNumeral(num){
                 romanNum += charArray[7].repeat(dummyThousands);
                 romanNum += charArray[5].repeat(dummyHundreds);
                 romanNum += charArray[2].repeat(dummyTens);
-            } else if(dummyTens < 1000 && dummyTens >= 100){
+            } 
+            //100 - 999
+            else if(dummyTens < 1000 && dummyTens >= 100){
+                //Hundreds
                 dummyHundreds = Math.floor(dummyTens/100);
-                dummyTens = Math.floor(dummyTens/10);
-                romanNum += charArray[5].repeat(dummyHundreds);
-                romanNum += charArray[2].repeat(dummyTens);
-            } else if(dummyTens < 100 && dummyTens >= 10){
-                dummyTens = Math.floor(dummyTens/10);
-                if(dummyTens >= 5){
+                if(dummyHundreds == 9){
+                    romanNum += charArray[4] + charArray[6];
+                    dummyHundreds = 0;
+                } else if(dummyHundreds < 9 && dummyHundreds >= 5){
+                    romanNum += charArray[5];
+                    dummyHundreds -= 5;
+                } else if(dummyHundreds == 4){
+                    romanNum += charArray[4] + charArray[5];
+                    dummyHundreds = 0;
+                }
+                romanNum += charArray[4].repeat(dummyHundreds);
+
+                //Tens
+                dummyTens = Math.floor(dummyTens/100);
+                if(dummyTens == 9){
+                    romanNum += charArray[2] + charArray[4];
+                    dummyTens = 0;
+                } else if(dummyTens < 9 && dummyTens >= 5){
                     romanNum += charArray[3];
-                    dummyTens = dummyTens - 5;
+                    dummyTens -= 5;
+                } else if(dummyTens == 4){
+                    romanNum += charArray[2] + charArray[3];
+                    dummyTens = 0;
+                }
+                romanNum += charArray[2].repeat(dummyTens);
+            } 
+            //10 - 99
+            else if(dummyTens < 100 && dummyTens >= 10){
+                dummyTens = Math.floor(dummyTens/10);
+                if(dummyTens == 9){
+                    romanNum += charArray[2] + charArray[4];
+                    dummyTens = 0;
+                } else if(dummyTens < 9 && dummyTens >= 5){
+                    romanNum += charArray[3];
+                    dummyTens -= 5;
+                } else if(dummyTens == 4){
+                    romanNum += charArray[2] + charArray[3];
+                    dummyTens = 0;
                 }
                 romanNum += charArray[2].repeat(dummyTens);
             }
@@ -86,9 +122,10 @@ function romanNumeral(num){
                     romanNum += charArray[0].repeat(dummyNum);
                     dummyNum = 0;
                 } else if(dummyNum >= 1 && dummyNum <= 4){
-                    romanNum += charArray[0].repeat(dummyNum);
                     if(romanNum.length == 4){
                         romanNum += charArray[0] + charArray[1];
+                    } else {
+                        romanNum += charArray[0].repeat(dummyNum);
                     }
                     dummyNum = 0;
                 }
