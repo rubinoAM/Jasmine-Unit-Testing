@@ -29,7 +29,7 @@ function numToWordLetterCount(num){
     else if (num >= 100 && num < 1000){
         //Hundreds
         let numHundreds = Math.floor(num / 100);
-        numToWord += singleDigitInts[numHundreds] + " hundred and ";
+        numToWord += singleDigitInts[numHundreds] + "hundredand";
 
         //Tens + Ones
         let dummyNum = num - (100 * numHundreds);
@@ -41,11 +41,14 @@ function numToWordLetterCount(num){
             if(numTens == 0){
                 numToWord += singleDigitInts[numOnes];
             } else {
-                numToWord += tensInts[numTens - 2] + "-" +singleDigitInts[numOnes];
+                numToWord += tensInts[numTens - 2] + singleDigitInts[numOnes];
             }
         } else{
             numToWord += firstDoubleDigitInts[dummyNum - 10];
         }
+    }
+    else if (num == 1000){
+        numToWord = "onethousand";
     }
 
     return numToWord.length;

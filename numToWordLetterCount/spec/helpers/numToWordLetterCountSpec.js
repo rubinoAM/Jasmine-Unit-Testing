@@ -35,7 +35,7 @@ describe('Convert an integer into an English written word and return its letter 
         expect(numToWordLetterCount(342)).toEqual(23);
     });
 
-    /*it('should return 20 if input == 115',()=>{
+    it('should return 20 if input == 115',()=>{
         expect(numToWordLetterCount(115)).toEqual(20);
     });
 
@@ -45,5 +45,5 @@ describe('Convert an integer into an English written word and return its letter 
 
     it('should return 11 if input == 1000',()=>{
         expect(numToWordLetterCount(1000)).toEqual(11);
-    });*/
+    });
 });
