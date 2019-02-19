@@ -27,7 +27,25 @@ function numToWordLetterCount(num){
         numToWord = tensInts[numTens - 2] + "-" +singleDigitInts[numOnes];
     }
     else if (num >= 100 && num < 1000){
-        //CODE
+        //Hundreds
+        let numHundreds = Math.floor(num / 100);
+        numToWord += singleDigitInts[numHundreds] + " hundred and ";
+
+        //Tens + Ones
+        let dummyNum = num - (100 * numHundreds);
+        let numOnes = dummyNum % 10;
+        let numTens = dummyNum - numOnes;
+        numTens = Math.floor(dummyNum / 10);
+
+        if(dummyNum >= 20){
+            if(numTens == 0){
+                numToWord += singleDigitInts[numOnes];
+            } else {
+                numToWord += tensInts[numTens - 2] + "-" +singleDigitInts[numOnes];
+            }
+        } else{
+            numToWord += firstDoubleDigitInts[dummyNum - 10];
+        }
     }
 
     return numToWord.length;

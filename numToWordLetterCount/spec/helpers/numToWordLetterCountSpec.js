@@ -31,11 +31,11 @@ describe('Convert an integer into an English written word and return its letter 
         expect(numToWordLetterCount(23)).toEqual(12);
     });
 
-    /*it('should return 23 if input == 342',()=>{
+    it('should return 23 if input == 342',()=>{
         expect(numToWordLetterCount(342)).toEqual(23);
     });
 
-    it('should return 20 if input == 115',()=>{
+    /*it('should return 20 if input == 115',()=>{
         expect(numToWordLetterCount(115)).toEqual(20);
     });
 
