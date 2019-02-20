@@ -15,5 +15,18 @@ For example:
 {()}[[{}]] is balanced */
 
 function balancedParentheses(str){
-    
+    let leftPar = str.includes('(');
+    let rightPar = str.includes(')');
+    let leftBrack = str.includes('[');
+    let rightBrack = str.includes(']');
+    let leftBrace = str.includes('{');
+    let rightBrace = str.includes('}');
+
+    if((leftPar && rightPar) || (leftBrack && rightBrack) || (leftBrace && rightBrace)){
+        return "SUCCESS";
+    } else {
+        throw Error("There are no parentheses, brackets or braces in this string.");
+    }
 }
+
+module.exports = balancedParentheses;
